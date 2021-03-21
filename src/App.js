@@ -8,21 +8,25 @@ import Notification from './components/NotificationComponent';
 
 const App = () => {
   const [good, setGood] = useState(0);
-
-  const handleGoodFeedback = () => {
-    setGood(good + 1);
-  };
-
   const [bad, setBad] = useState(0);
-
-  const handleBadFeedback = () => {
-    setBad(bad + 1);
-  };
-
   const [neutral, setNeutral] = useState(0);
 
-  const handleNeutralFeedback = () => {
-    setNeutral(neutral + 1);
+  const handleChange = event => {
+    const { name } = event.target;
+
+    switch (name) {
+      case 'good':
+        setGood(good + 1);
+        break;
+      case 'bad':
+        setBad(bad + 1);
+        break;
+      case 'neutral':
+        setNeutral(neutral + 1);
+        break;
+      default:
+        throw Error(`the type of field name - ${name} is not processed`);
+    }
   };
 
   const total = good + bad + neutral;
@@ -30,11 +34,7 @@ const App = () => {
 
   return (
     <Section title="Please leave feedback">
-      <FeedbackOptions
-        onGoodFeedback={handleGoodFeedback}
-        onNeutralFeedback={handleNeutralFeedback}
-        onBadFeedback={handleBadFeedback}
-      />
+      <FeedbackOptions onLeaveFeedback={handleChange} />
       <Statistics>
         {total > 0 ? (
           <StatisticsList

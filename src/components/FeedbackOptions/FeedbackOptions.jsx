@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
 import s from './FeedbackOptions.module.css';
 
-function FeedbackOptions({ onGoodFeedback, onNeutralFeedback, onBadFeedback }) {
+function FeedbackOptions({ onLeaveFeedback }) {
   return (
     <div>
       <button
         className={s.button}
         type="button"
         name="good"
-        onClick={onGoodFeedback}
+        onClick={onLeaveFeedback}
       >
         Good
       </button>
@@ -16,7 +16,7 @@ function FeedbackOptions({ onGoodFeedback, onNeutralFeedback, onBadFeedback }) {
         className={s.button}
         type="button"
         name="neutral"
-        onClick={onNeutralFeedback}
+        onClick={onLeaveFeedback}
       >
         Neutral
       </button>
@@ -24,7 +24,7 @@ function FeedbackOptions({ onGoodFeedback, onNeutralFeedback, onBadFeedback }) {
         className={s.button}
         type="button"
         name="bad"
-        onClick={onBadFeedback}
+        onClick={onLeaveFeedback}
       >
         Bad
       </button>
@@ -33,7 +33,7 @@ function FeedbackOptions({ onGoodFeedback, onNeutralFeedback, onBadFeedback }) {
 }
 
 FeedbackOptions.propTypes = {
-  onBtnClick: PropTypes.func,
+  onLeaveFeedback: PropTypes.func,
 };
 
 export default FeedbackOptions;
