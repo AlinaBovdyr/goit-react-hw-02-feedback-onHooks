@@ -1,0 +1,35 @@
+.button {
+  margin-right: 10px;
+  padding: 3px 10px;
+
+  background-color: #fff;
+  border: 1px solid gray;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button[name='good']:hover,
+.button[name='good']:focus {
+  background-color: #19bb19bf;
+  color: #fff;
+}
+
+.button[name='bad']:hover,
+.button[name='bad']:focus {
+  background-color: #f94b4b;
+  color: #fff;
+}
+
+.button[name='neutral']:hover,
+.button[name='neutral']:focus {
+  background-color: #ffff6a;
+  color: #858585;
+}
+
+.button[name='good']:active,
+.button[name='bad']:active,
+.button[name='neutral']:active {
+  background-color: #0000ff82;
+  color: #fff;
+}
